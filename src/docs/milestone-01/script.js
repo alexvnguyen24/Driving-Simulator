@@ -1,11 +1,10 @@
 window.addEventListener('DOMContentLoaded', function() {
-    function goToBottomOfPage() {
-      document.body.style.backgroundColor = 'black';
-    }
-  
-    const bottomButton = document.getElementById('bottomButton');
-    if (bottomButton) {
-      bottomButton.addEventListener('click', goToBottomOfPage);
-    }
-  });
-  
+  function scrollToBottom() {
+      window.scrollTo(0, document.body.scrollHeight);
+  }
+
+  const bottomButton = document.getElementById('bottomButton');
+  if (bottomButton) {
+      bottomButton.addEventListener('click', scrollToBottom);
+  }
+});
