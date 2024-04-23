@@ -1,0 +1,35 @@
+
+#play_button {
+    width: 250px; 
+    height: 100px; 
+    font-family: 'Chiller', sans-serif;
+    font-size: 20px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    position: absolute;
+    top: 50%;
+    left: 43%;
+  }
+
+  #title_heading {
+    position: absolute;
+    top: 40%;
+    left: 39%; 
+    font-size: 50px;
+  }
+
+  #play_button:hover{
+    background-color: lightgrey;
+    color: whitesmoke;
+  }
+
+ 
+  body {
+   background-color: aliceblue;
+  }
+
+  
+  /*background-image: url('Background.jpg');*/
+  /*background-image: url('../Driving-Simulator/Data/Background.jpg');*/
+  
