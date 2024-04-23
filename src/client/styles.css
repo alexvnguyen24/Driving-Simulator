@@ -1,6 +1,23 @@
 #tutorial_button{
     color: yellow;
     background-color: grey;
-    width: 200px;
+    width: 100px;
     height: 2em;
+}
+#tutorial-text{
+    text-align: center;
+}
+.instruction-paragraph{
+    text-align: left;
+    padding: 30px;
+}
+#tutorial-box{
+    width: 700px; 
+    height: 500px; 
+    background-color: rgb(173, 173, 173);
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: black;
 }
