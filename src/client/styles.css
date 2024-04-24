@@ -105,7 +105,7 @@ body {
   display: block;
   background-image: url(road.jpg);
   position: absolute;
-  bottom: -20%;
+  bottom: 0%;
   left: 0;
   right: 0;
   z-index: 1;
@@ -144,7 +144,7 @@ body {
 
 .car
 { 
-    height:23%;
+    height:50%;
     position:absolute;
     bottom:-80px;
     left: 50%;
@@ -171,7 +171,7 @@ body {
 {
   height:230px;
   position:absolute;
-  bottom:-200px;
+  bottom:-30px;
   left: 50%;
   z-index:2; /*Made it 1 instead of 2*/
   transform: translateX(-50%);
