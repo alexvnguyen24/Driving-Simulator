@@ -39,10 +39,14 @@ playbuttonElement.addEventListener("click", () => {
     startCarAnimation();
     startHighwayAnimation();
     startCityAnimation();
-    // Delay the navigation to menu.html by 5 seconds (adjust as needed)
-    setTimeout(() => {
-      window.location.href = "menu.html";
-    }, 5000)
+   // Hide the play button and tutorial button
+  playbuttonElement.style.display = 'none';
+  tutorialButton.style.display = 'none';
+  
+  // Show the car animation container
+  const carAnimationContainer = document.querySelector('.hero');
+  carAnimationContainer.style.display = 'block';
+    
 });
 // Car animation control
 const car = document.querySelector('.car');
