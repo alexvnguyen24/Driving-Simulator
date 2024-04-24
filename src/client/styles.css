@@ -1,3 +1,7 @@
+.start_menu{
+  position: relative;
+}
+
 #tutorial_button:hover{
   background-color: #e1c3eb;
   color: whitesmoke;
@@ -55,7 +59,7 @@
 #title_heading {
   position: absolute;
   white-space: nowrap;
-  top: 25%; 
+  top: 70%; 
   left: 50%; 
   transform: translate(-50%, -50%);
   font-family: Impact, Arial Black, sans-serif;
@@ -74,8 +78,7 @@
 
 
 body {
- /*background-color: aliceblue;*/
- 
+ background-attachment: fixed;
  background-image: url('carImg.png');
  background-size: cover;
 }
