@@ -26,4 +26,48 @@ tutorialButton.addEventListener("click", function(){
 
 const playbuttonElement = document.getElementById("play_button");
 
-playbuttonElement.addEventListener("click", () => {document.body.style.backgroundColor = 'black'; window.location.href = "menu.html"});
+playbuttonElement.addEventListener("click", () => {
+    document.body.style.backgroundColor = 'black';
+    startCarAnimation();
+    startHighwayAnimation();
+    startCityAnimation();
+    // Delay the navigation to menu.html by 5 seconds (adjust as needed)
+    setTimeout(() => {
+      window.location.href = "menu.html";
+    }, 5000)
+});
+// Car animation control
+const car = document.querySelector('.car');
+const highway = document.querySelector('.highway');
+const city = document.querySelector('.city');
+
+let carAnimationId;
+let highwayAnimationId;
+let cityAnimationId;
+
+function startCarAnimation() {
+  carAnimationId = requestAnimationFrame(startCarAnimation);
+  
+}
+
+function startHighwayAnimation() {
+  highwayAnimationId = requestAnimationFrame(startHighwayAnimation);
+  
+}
+
+function startCityAnimation() {
+  cityAnimationId = requestAnimationFrame(startCityAnimation);
+ 
+}
+
+function stopCarAnimation() {
+  cancelAnimationFrame(carAnimationId);
+}
+
+function stopHighwayAnimation() {
+  cancelAnimationFrame(highwayAnimationId);
+}
+
+function stopCityAnimation() {
+  cancelAnimationFrame(cityAnimationId);
+}
