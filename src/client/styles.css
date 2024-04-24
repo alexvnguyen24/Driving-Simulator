@@ -44,17 +44,26 @@
   position: absolute;
   top: 50%;
   left: 43%;
+  background-color: #fac678;
 }
 
 #title_heading {
   position: absolute;
-  top: 40%;
-  left: 39%; 
-  font-size: 50px;
+  top: 10%;
+  left: 36%;
+  font-family: Impact, Arial Black, sans-serif;
+  font-size: 70px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff8c00, #ff0000); /* Gradient colors */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+
 }
 
 #play_button:hover{
-  background-color: lightgrey;
+  background-color: #ddbce8;
   color: whitesmoke;
 }
 
