@@ -126,7 +126,7 @@ body {
 
 .city
 { 
-    height:260px;
+    height:47.48%;
     width:500%;
     background-image:url(city.png);
     position:absolute;
@@ -185,18 +185,6 @@ body {
   height: 95%;
   animation: wheel 1s linear infinite;
 }
-
-/*
-.back-wheel {
-  margin-right: 21%;
-  margin-bottom: 40%;
-}
-
-.front-wheel {
-  margin-left: 1%;
-  margin-bottom: 42%;
-}
-*/
 
 .back-wheel
 {
