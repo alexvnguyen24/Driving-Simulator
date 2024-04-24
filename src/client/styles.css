@@ -80,8 +80,6 @@ body {
 }
 
 
-/*background-image: url('Background.jpg');*/
-/*background-image: url('../Driving-Simulator/Data/Background.jpg');*/
 *
 {
     margin:0;
@@ -92,7 +90,7 @@ body {
     height:100vh;
     width:100%;
     background-image:url(sky.jpg);
-    background-size:contain;
+    background-size: cover;
     background-position:center;
     position:relative;
     overflow-x:hidden;
@@ -173,9 +171,9 @@ body {
 {
   height:230px;
   position:absolute;
-  bottom:-100px;
+  bottom:-200px;
   left: 50%;
-  z-index:2;
+  z-index:2; /*Made it 1 instead of 2*/
   transform: translateX(-50%);
 }
 .wheel img
@@ -186,12 +184,12 @@ body {
 }
 .back-wheel
 {
-  left:-250px;
+  left:-205px;
   position:absolute;
 }
 .front-wheel
 {
-  left:140px;
+  left:90px; /*OG 140px*/
   position:absolute;
 }
 @keyframes wheel {
