@@ -36,7 +36,9 @@ tutorialButton.addEventListener("click", function(){
 
 const playbuttonElement = document.getElementById("play_button");
 
+
 playbuttonElement.addEventListener("click", () => {
   //window.location.href = "car-animation.html";
-  window.location.href = "combined.html";
+  //window.location.href = "combined.html";
+
 });

@@ -4,39 +4,45 @@ const db = new PouchDB('quiz-game');
 // Function to save username to PouchDB
 async function saveUsername(username) {
   try {
-      // Check if username exists in the database
-      const existingUser = await db.get('username');
-      // If username exists, update it
-      existingUser.value = username;
-      await db.put(existingUser);
-      console.log('Username updated successfully:', username);
-  } catch (error) {
-      // If username doesn't exist, create a new document
-      if (error.status === 404) {
-          const newUser = { _id: 'username', value: username };
-          await db.put(newUser);
-          console.log('New username saved successfully:', username);
-      } else {
-          console.error('Error saving username:', error);
-      }
-  }
+    // Check if username exists in the database
+    const existingUser = await db.get('username');
+    // If username exists, update it
+    existingUser.value = username;
+    await db.put(existingUser);
+    console.log('Username updated successfully:', username);
+} catch (error) {
+    // If username doesn't exist, create a new document
+    if (error.status === 404) {
+        const newUser = { _id: 'username', value: username };
+        await db.put(newUser);
+        console.log('New username saved successfully:', username);
+    } else {
+        console.error('Error saving username:', error);
+    }
+}
 }
 
 //alert is not working
 // Event listener for the play button
-playButtonElement = document.getElementById('play_button').
+const playButtonElement = document.getElementById("play_button");
 
 playButtonElement.addEventListener('click', async function() {
   const username = document.getElementById('username').value.trim();
-  if (username !== undefined) {
+  if (username !== '') {
+      alert(`my username is this ${username}`)
       await saveUsername(username);
+      window.location.href = "combined.html";
       // Add your logic to start the game after saving the username
-      displayQuizQuestion(); // Start the quiz after saving the username
+      startCarAnimation();
+      startHighwayAnimation();
+      startCityAnimation();
+      startQuizTimer(); // Start the quiz timer
+      
   } else {
       alert('Please enter a username.');
   }
-});
-
+ });
+ 
 // Car animation control
 const car = document.querySelector('.car');
 const highway = document.querySelector('.highway');
@@ -79,6 +85,7 @@ function startCityAnimation() {
 function startQuizTimer() {
     // Set a timeout to stop the animations after 10 seconds
     quizTimer = setInterval(displayQuizQuestion, 10000); // Display quiz question every 20 seconds
+
   }
  
 
@@ -153,9 +160,21 @@ function nextQuestion() {
   }
 
 // Start the animations and quiz timer when the page loads
+// theres probabily a conflict between this and startQuizTimer(); 
+
+/*
 window.addEventListener('load', () => {
   startCarAnimation();
   startHighwayAnimation();
   startCityAnimation();
   startQuizTimer(); // Start the quiz timer
 });
+*/
+
+
+
+/*
+The problems, the quizQuestionDisplay is not being called 
+
+*/
+
