@@ -38,7 +38,7 @@ function startCityAnimation() {
 
 // Function to start the quiz timer
 function startQuizTimer() {
-  quizTimer = setInterval(displayQuizQuestion, 20000); // Display quiz question every 20 seconds
+  quizTimer = setInterval(displayQuizQuestion, 10000); // Display quiz question every 20 seconds
 }
 
 // Function to display quiz question
