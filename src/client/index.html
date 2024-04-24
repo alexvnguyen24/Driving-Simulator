@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Driving Simulator</title>
     <script type="module" src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.0/dist/pouchdb.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,6 +13,7 @@
       <div class="start_menu">
         <h1 id="title_heading">Driving Simulator</h1>
         <div id="controls">
+          <input type="text" id="username" placeholder="Enter your username">
           <input type="button" value="PLAY!" id="play_button" />
           <input type="button" value="How to Play" id="tutorial_button" />
         </div>
