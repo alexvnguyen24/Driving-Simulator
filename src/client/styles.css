@@ -6,7 +6,7 @@
     position: absolute;
     top: calc(62% + 20px); 
     left: 50%; 
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 #tutorial_button:hover{
