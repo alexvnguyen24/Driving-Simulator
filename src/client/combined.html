@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrated Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="highway"></div>
+    <div class="city"></div>
+    <div class="car">
+      <img src="car.png" alt="Car">
+    </div>
+    <div class="wheel">
+      <img src="wheel.png" class="back-wheel">
+      <img src="wheel.png" class="front-wheel">
+    </div>
+  </div>
+  
+  <div class="quiz-container" id="quiz-container" style="display: none;">
+    <div class="question" id="question1">
+        <p>What does the following sign represent?</p>
+        <img src="stopSign.jpg" alt="Question 1 Image">
+        <div class="options">
+          <label><input type="radio" name="q1" value="a"> Stop</label>
+          <label><input type="radio" name="q1" value="b"> Slow Down</label>
+          <label><input type="radio" name="q1" value="c"> Yield</label>
+          <label><input type="radio" name="q1" value="d"> Merge</label>
+        </div>
+      </div>
+      <div class="question" id="question2" style="display: none;">
+        <img src="noUTurnSign.jpg" alt="Question 2 Image">
+        <p>What does the following sign represent?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a"> Yield</label>
+          <label><input type="radio" name="q2" value="b"> No U-Turn</label>
+          <label><input type="radio" name="q2" value="c"> Stop</label>
+          <label><input type="radio" name="q2" value="d"> U-Turn</label>
+        </div>
+      </div>
+      <div id="score" style="display: none;">
+        <h1>Your Quiz Score</h1>
+        <div id="score-result"></div>
+      </div>
+      <div id="timer">Time remaining: <span id="time-left">15</span> seconds</div>
+      <button id="next-btn" onclick="nextQuestion()">Next</button>
+  </div>
+
+  <script src="combined.js"></script>
+</body>
+</html>
