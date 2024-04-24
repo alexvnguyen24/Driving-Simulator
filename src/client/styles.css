@@ -70,6 +70,7 @@
 
 body {
  /*background-color: aliceblue;*/
+ 
  background-image: url('carImg.png');
  background-size: cover;
 }
@@ -87,7 +88,7 @@ body {
     height:100vh;
     width:100%;
     background-image:url(sky.jpg);
-    background-size:cover;
+    background-size:contain;
     background-position:center;
     position:relative;
     overflow-x:hidden;
@@ -95,21 +96,23 @@ body {
 
 .highway
 { 
-    height:200px;
-    width:500%;
-    display: block;
-    background-image:url(road.jpg);
-    position:center;
-    bottom:0;
-    left: 0;
-    right: 0;
-    z-index:1;
-    animation: highway 5s linear infinite
+  height: 120px;
+  width: 500%;
+  display: block;
+  background-image: url(road.jpg);
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  animation: highway 5s linear infinite;
+  
+
 }
 @keyframes highway 
 {
     100%{
-        transform: translateX(-3400px);
+        transform: translateX(-2400px);
     }
 }
 
@@ -132,7 +135,10 @@ body {
     100%{
          transform: translateX(-1400px);
     }
+    
 }
+
+
 
 .car
 { 
@@ -148,3 +154,44 @@ body {
    width: 100%
 }
 
+@keyframes car {
+  100%{
+    transform: translateY(-1px);
+  }
+  50%{
+    transform: translateY(-1px);
+  }
+  0%{
+    transform: translateY(-1px);
+  }
+}
+.wheel
+{
+  height:230px;
+  position:absolute;
+  bottom:-100px;
+  left: 50%;
+  z-index:2;
+  transform: translateX(-50%);
+}
+.wheel img
+{
+   width: 100px;
+   height: 100px;
+   animation: wheel 1s linear infinite;
+}
+.back-wheel
+{
+  left:-250px;
+  position:absolute;
+}
+.front-wheel
+{
+  left:140px;
+  position:absolute;
+}
+@keyframes wheel {
+  100%{
+    transform: rotate(360deg);
+  }
+}

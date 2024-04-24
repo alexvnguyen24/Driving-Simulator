@@ -33,53 +33,7 @@ tutorialButton.addEventListener("click", function(){
 });
 
 const playbuttonElement = document.getElementById("play_button");
-const carAnimationContainer = document.querySelector('.hero');
-
-// Hide the car animation container initially
-carAnimationContainer.style.display = 'none';
 
 playbuttonElement.addEventListener("click", () => {
-  document.body.style.backgroundColor = 'black';
-  
-  // Hide the play button and tutorial button
-  playbuttonElement.style.display = 'none';
-  tutorialButton.style.display = 'none';
-  
-  // Show the car animation container
-  carAnimationContainer.style.display = 'block';
-  
-  startCarAnimation();
-  startHighwayAnimation();
-  startCityAnimation();
+  window.location.href = "car-animation.html";
 });
-
-let carAnimationId;
-let highwayAnimationId;
-let cityAnimationId;
-
-function startCarAnimation() {
-  carAnimationId = requestAnimationFrame(startCarAnimation);
-  
-}
-
-function startHighwayAnimation() {
-  highwayAnimationId = requestAnimationFrame(startHighwayAnimation);
-  
-}
-
-function startCityAnimation() {
-  cityAnimationId = requestAnimationFrame(startCityAnimation);
- 
-}
-
-function stopCarAnimation() {
-  cancelAnimationFrame(carAnimationId);
-}
-
-function stopHighwayAnimation() {
-  cancelAnimationFrame(highwayAnimationId);
-}
-
-function stopCityAnimation() {
-  cancelAnimationFrame(cityAnimationId);
-}
