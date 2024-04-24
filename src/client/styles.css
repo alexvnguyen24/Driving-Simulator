@@ -19,7 +19,7 @@
     height: 300px; 
     background-color: rgb(173, 173, 173);
     position: absolute; 
-    top: 35%; 
+    top: 100%; 
     left: 50%; 
     transform: translate(-50%, -50%);
     color: black;
@@ -78,9 +78,9 @@
 
 
 body {
- background-attachment: fixed;
- background-image: url('carImg.png');
- background-size: cover;
+  background-attachment: fixed;
+  background-image: url('carImg.png');
+  background-size: cover;
 }
 
 
