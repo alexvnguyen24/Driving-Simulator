@@ -1,6 +1,7 @@
 
 const tutorialButton = document.getElementById("tutorial_button");
 tutorialButton.addEventListener("click", function(){
+    //Create the tutorial box and its text when the button is clicked.
     if(!document.getElementById("tutorial-box")){
         const textBox = document.createElement("div");
         const h1 = document.createElement("h1");
@@ -25,6 +26,7 @@ tutorialButton.addEventListener("click", function(){
         textBox.appendChild(p2);
     }
     else{
+        //Remove the tutorial box when button is clicked.
         const removeElement = document.getElementById("tutorial-text");
         while(removeElement.firstChild){
             removeElement.removeChild(removeElement.firstChild);
