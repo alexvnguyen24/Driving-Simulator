@@ -60,7 +60,9 @@
 
 
 body {
- background-color: aliceblue;
+ /*background-color: aliceblue;*/
+ background-image: url('carImg.png');
+ background-size: cover;
 }
 
 
