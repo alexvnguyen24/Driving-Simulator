@@ -146,16 +146,15 @@ body {
     
 }
 
-.car
-{ 
-    height:50%;
-    position:absolute;
-    /* bottom:-80px; */
-    bottom:-7%;
-    left: 50%;
-    z-index:2;
-    transform: translateX(-50%);
+.car {
+  height: 20vh; /* Adjust the height as needed */
+  position: absolute;
+  bottom: 5vh; /* Adjust the vertical position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
+
 .car img
 {
    width: 100%
