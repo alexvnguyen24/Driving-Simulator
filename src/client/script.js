@@ -25,25 +25,25 @@ tutorialButton.addEventListener("click", function(){
 });
 
 const playbuttonElement = document.getElementById("play_button");
+const carAnimationContainer = document.querySelector('.hero');
+
+// Hide the car animation container initially
+carAnimationContainer.style.display = 'none';
 
 playbuttonElement.addEventListener("click", () => {
-    document.body.style.backgroundColor = 'black';
-    startCarAnimation();
-    startHighwayAnimation();
-    startCityAnimation();
-   // Hide the play button and tutorial button
+  document.body.style.backgroundColor = 'black';
+  
+  // Hide the play button and tutorial button
   playbuttonElement.style.display = 'none';
   tutorialButton.style.display = 'none';
   
   // Show the car animation container
-  const carAnimationContainer = document.querySelector('.hero');
   carAnimationContainer.style.display = 'block';
-    
+  
+  startCarAnimation();
+  startHighwayAnimation();
+  startCityAnimation();
 });
-// Car animation control
-const car = document.querySelector('.car');
-const highway = document.querySelector('.highway');
-const city = document.querySelector('.city');
 
 let carAnimationId;
 let highwayAnimationId;
