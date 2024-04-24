@@ -147,7 +147,7 @@ body {
 }
 
 .car {
-  height: 20vh; /* Adjust the height as needed */
+  height: 25vh; /* Adjust the height as needed */
   position: absolute;
   bottom: 5vh; /* Adjust the vertical position as needed */
   left: 50%;
