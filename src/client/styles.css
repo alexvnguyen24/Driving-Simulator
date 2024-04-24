@@ -80,10 +80,8 @@
 
 body {
   background-attachment: fixed;
-  background-image: url('car.jpeg');
+  background-image: url('carImg.png');
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 
@@ -147,62 +145,79 @@ body {
     }
     
 }
-
 .car {
-  height: 25vh; /* Adjust the height as needed */
   position: absolute;
-  bottom: 5vh; /* Adjust the vertical position as needed */
+  bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.car img
-{
-   width: 100%
+.car img {
+  width: 100%;
+  height: auto;
 }
 
-@keyframes car {
-  100%{
-    transform: translateY(-1px);
-  }
-  50%{
-    transform: translateY(-1px);
-  }
-  0%{
-    transform: translateY(-1px);
+@media (max-width: 1200px) {
+  .car img {
+    max-height: 25vh;
   }
 }
-.wheel
-{
-  height:230px;
-  position:absolute;
-  bottom:-30px;
-  left: 50%;
-  z-index:2; /*Made it 1 instead of 2*/
-  transform: translateX(-50%);
+
+@media (min-width: 1201px) {
+  .car img {
+    max-height: 30vh;
+  }
 }
-.wheel img
-{
-   width: 100px;
-   height: 100px;
-   animation: wheel 1s linear infinite;
+
+.wheel {
+  position: relative;
+  height: 15%;
+  z-index: 2;
+  transform: translateY(5%); /* Changed from 10% to 5% */
 }
+
+.wheel img {
+  width: auto;
+  height: 95%;
+  animation: wheel 1s linear infinite;
+}
+
+/*
+.back-wheel {
+  margin-right: 21%;
+  margin-bottom: 40%;
+}
+
+.front-wheel {
+  margin-left: 1%;
+  margin-bottom: 42%;
+}
+*/
+
 .back-wheel
 {
-  left:-205px;
-  position:absolute;
+  left:34%;
+  top: 520%;
+  position:relative;
 }
+
 .front-wheel
 {
-  left:90px; /*OG 140px*/
+  left:57.25%; 
+  top: 520%;
   position:absolute;
 }
+
 @keyframes wheel {
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
+
 
 .quiz-container {
   max-width: 500px;
