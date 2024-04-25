@@ -218,8 +218,8 @@ body {
   border-radius: 5px;
   display: none;
   position: absolute;
-  top: 50%; /* Adjust this value as needed */
-  left: 50%; /* Adjust this value as needed */
+  top: 50%; 
+  left: 50%; 
   transform: translate(-50%, -50%);
   z-index: 999; /* Ensure the quiz is rendered on top of the animation */
 }
@@ -254,8 +254,8 @@ img {
 #username_display {
   
   position: fixed; /* Position the element relative to the viewport */
-  top: 20px; /* Adjust top position as needed */
-  left: 20px; /* Adjust right position as needed */
+  top: 20px; 
+  left: 20px; 
   color: #0056b3;
   background-color: rgba(0, 0, 0, 0.7); /* Background color with some transparency */
   color: white; /* Text color */
