@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Integrated Project</title>
+  <!-- Important to link the css file in order to implement all the stylistic effects. -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+  <!-- On the first step of the game, user has to input name in order to start the game -->
   <h1 id="username_display"></h1>
 
-
+  <!-- The following div takes care of the animation of the car, and the background -->
   <div class="hero">
     <div class="highway"></div>
     <div class="city"></div>
@@ -24,7 +25,9 @@
     </div>
   </div>
   
+    <!-- The following div sets up the basic guidelines for the quiz game -->
   <div class="quiz-container" id="quiz-container" style="display: none;">
+    <!-- Each individual div inside holds a separate question -->
     <div class="question" id="question1">
         <p>What does the following sign represent?</p>
         <img src="stopSign.jpg" alt="Question 1 Image">
@@ -45,15 +48,19 @@
           <label><input type="radio" name="q2" value="d"> U-Turn</label>
         </div>
       </div>
+      <!-- This div helps keep track of the user score. -->
       <div id="score" style="display: none;">
         <h1>Your Quiz Score</h1>
         <div id="score-result"></div>
       </div>
+      <!-- This div takes care of timer on each question, and the next button under 
+      each question. -->
       <div id="timer">Time remaining: <span id="time-left">15</span> seconds</div>
       <button id="next-btn" onclick="nextQuestion()">Next</button>
   </div>
 
-
+  <!-- This script is necessary in order to link the back-end code for the game, with
+  the front end set up of the game.  -->
   <script src="combined.js"></script>
 </body>
 </html>
