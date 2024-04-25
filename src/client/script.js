@@ -1,4 +1,3 @@
-
 const tutorialButton = document.getElementById("tutorial_button");
 tutorialButton.addEventListener("click", function(){
     //Create the tutorial box and its text when the button is clicked.
@@ -36,9 +35,9 @@ tutorialButton.addEventListener("click", function(){
 
 const playbuttonElement = document.getElementById("play_button");
 
-
+/*
 playbuttonElement.addEventListener("click", () => {
   //window.location.href = "car-animation.html";
   //window.location.href = "combined.html";
-
 });
+*/

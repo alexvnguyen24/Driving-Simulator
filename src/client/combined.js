@@ -1,47 +1,39 @@
+let theUsername = "";
 
-const db = new PouchDB('quiz-game');
+ const playButtonElement = document.getElementById("play_button");
+if(playButtonElement) {
 
-// Function to save username to PouchDB
-async function saveUsername(username) {
-  try {
-    // Check if username exists in the database
-    const existingUser = await db.get('username');
-    // If username exists, update it
-    existingUser.value = username;
-    await db.put(existingUser);
-    console.log('Username updated successfully:', username);
-} catch (error) {
-    // If username doesn't exist, create a new document
-    if (error.status === 404) {
-        const newUser = { _id: 'username', value: username };
-        await db.put(newUser);
-        console.log('New username saved successfully:', username);
-    } else {
-        console.error('Error saving username:', error);
-    }
-}
-}
+  playButtonElement.addEventListener('click', async function() {
 
-//alert is not working
-// Event listener for the play button
-const playButtonElement = document.getElementById("play_button");
-
-playButtonElement.addEventListener('click', async function() {
-  const username = document.getElementById('username').value.trim();
+    const username = document.getElementById('username').value.trim();
   if (username !== '') {
-      alert(`my username is this ${username}`)
-      await saveUsername(username);
+      theUsername = username;
+      localStorage.setItem('username', theUsername); // Store the username in local storage
       window.location.href = "combined.html";
-      // Add your logic to start the game after saving the username
-      startCarAnimation();
-      startHighwayAnimation();
-      startCityAnimation();
-      startQuizTimer(); // Start the quiz timer
-      
-  } else {
+    }
+
+    else {
       alert('Please enter a username.');
+    }
+
+  });
+}
+
+theUsername = localStorage.getItem('username');
+function displayUsername(username) {
+
+
+
+  const usernameDisplayElement = document.getElementById('username_display');
+  if (usernameDisplayElement) {
+
+
+    usernameDisplayElement.innerHTML = username;
+
   }
- });
+
+}
+
  
 // Car animation control
 const car = document.querySelector('.car');
@@ -91,6 +83,7 @@ function startQuizTimer() {
 
 // Function to display quiz question
 function displayQuizQuestion() {
+
   clearInterval(quizTimer); // Stop the timer to prevent multiple quiz questions from appearing simultaneously
   const quizContainer = document.getElementById('quiz-container');
   quizContainer.style.display = 'block'; // Show the quiz container
@@ -162,19 +155,21 @@ function nextQuestion() {
 // Start the animations and quiz timer when the page loads
 // theres probabily a conflict between this and startQuizTimer(); 
 
-/*
+
 window.addEventListener('load', () => {
+  displayUsername(theUsername);
   startCarAnimation();
   startHighwayAnimation();
   startCityAnimation();
   startQuizTimer(); // Start the quiz timer
 });
-*/
+
 
 
 
 /*
 The problems, the quizQuestionDisplay is not being called 
+  >The problem is because pouchDB is not being imported correctly;
 
 */
 
