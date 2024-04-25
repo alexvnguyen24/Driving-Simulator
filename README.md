@@ -28,7 +28,6 @@ To play the game locally on your machine, follow these steps:
    - Enter your username and click "PLAY!" to start the game.
 
 4. **Game Instructions:**
-   - Drive the car using arrow keys or mouse clicks.
    - Answer quiz questions correctly to earn points.
 
 ## Game Development
