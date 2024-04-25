@@ -38,15 +38,10 @@ theUsername = localStorage.getItem('username');
 function displayUsername(username) {
   const usernameDisplayElement = document.getElementById('username_display');
   if (usernameDisplayElement) {
-
-
     usernameDisplayElement.innerHTML = `Username: ${username}`;
-
   }
-
 }
 
- 
 // Car animation control
 const car = document.querySelector('.car');
 const highway = document.querySelector('.highway');
@@ -58,25 +53,22 @@ let cityAnimationId;
 let quizTimer;
 let currentQuestion = 1;
 let timer;
-let timeLeft = 15; // Initial time for each question
+let timeLeft = 15;
 let score = 0;
 
 // Function to start the car animation
 function startCarAnimation() {
   carAnimationId = requestAnimationFrame(startCarAnimation);
-  
 }
 
 // Function to start the highway animation
 function startHighwayAnimation() {
   highwayAnimationId = requestAnimationFrame(startHighwayAnimation);
- 
 }
 
 // Function to start the city animation
 function startCityAnimation() {
   cityAnimationId = requestAnimationFrame(startCityAnimation);
-  
 }
 
 /**
@@ -85,8 +77,7 @@ function startCityAnimation() {
  */
 function startQuizTimer() {
     // Set a timeout to stop the animations after 10 seconds
-    quizTimer = setInterval(displayQuizQuestion, 10000); // Display quiz question every 20 seconds
-
+    quizTimer = setInterval(displayQuizQuestion, 10000); // Display quiz question every 10 seconds
   }
  
 /**
@@ -96,9 +87,9 @@ function startQuizTimer() {
 
 function displayQuizQuestion() {
 
-  clearInterval(quizTimer); // Stop the timer to prevent multiple quiz questions from appearing simultaneously
+  clearInterval(quizTimer);
   const quizContainer = document.getElementById('quiz-container');
-  quizContainer.style.display = 'block'; // Show the quiz container
+  quizContainer.style.display = 'block'; 
 
   startTimer(); // Start the timer for the current question
 }
@@ -114,7 +105,7 @@ function startTimer() {
 
     if (timeLeft < 0) {
       clearInterval(timer);
-      timeLeft = 0; // Ensure timeLeft doesn't go negative
+      timeLeft = 0;
       nextQuestion();
     }
   }
@@ -133,7 +124,6 @@ function nextQuestion() {
     const container = document.getElementById('quiz-container');
     const currentQuestionElement = document.getElementById(`question${currentQuestion}`);
   
-    // Get selected answer
     const selectedAnswer = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
     const answer = selectedAnswer ? selectedAnswer.value : ''; // If no answer selected, assign empty string
   
@@ -160,13 +150,12 @@ function nextQuestion() {
     // Hide current question
     currentQuestionElement.style.display = 'none';
   
-    // Show next question
     currentQuestion++;
     const nextQuestionElement = document.getElementById(`question${currentQuestion}`);
     nextQuestionElement.style.display = 'block';
   
     // Reset timer and start for the next question
-    clearInterval(timer); // Stop the timer for the current question
+    clearInterval(timer);
     timeLeft = 15;
     startTimer();
   }
@@ -179,15 +168,6 @@ window.addEventListener('load', () => {
   startCarAnimation();
   startHighwayAnimation();
   startCityAnimation();
-  startQuizTimer(); // Start the quiz timer
+  startQuizTimer();
 });
-
-
-
-
-/*
-The problems, the quizQuestionDisplay is not being called 
-  >The problem is because pouchDB is not being imported correctly;
-
-*/
 
