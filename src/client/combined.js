@@ -28,7 +28,7 @@ function displayUsername(username) {
   if (usernameDisplayElement) {
 
 
-    usernameDisplayElement.innerHTML = username;
+    usernameDisplayElement.innerHTML = `Username: ${username}`;
 
   }
 
