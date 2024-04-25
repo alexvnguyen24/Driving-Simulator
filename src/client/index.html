@@ -4,23 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Driving Simulator</title>
+    <!-- This script is necessary in order to link the back-end code for the game, with
+    the front end set up of the game. -->    
     <script type="module" src="script.js" defer></script>
     <script type="module" src="combined.js" defer></script>
     <script type= "module" src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.0/dist/pouchdb.min.js"></script>
+    <!-- Important to link the css file in order to implement all the stylistic effects. -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
       <div class="start_menu">
         <h1 id="title_heading">Driving Simulator</h1>
-        
+        <!-- This div is important in setting up the user interface of the game. These
+        texts are what are visible to the user. -->
         <div id="controls">
           <input type="text" id="username" placeholder="Enter your username">
           <input type="button" value="PLAY!" id="play_button" />
           <input type="button" value="How to Play" id="tutorial_button" />
         </div>
         
-
+        <!-- References to the tutorial button described in script.js -->
         <div id="tutorial-text"></div>
       </div>
     </main>
