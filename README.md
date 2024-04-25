@@ -7,7 +7,7 @@ This is a simple driving simulator game developed using HTML, CSS, and JavaScrip
 
 ## Game Features
 
-- **Car Animation:** Drive the car along the highway while avoiding obstacles.
+- **Car Animation:** The car runs on the highway and will stop for the quiz to pop up.
 - **Quiz Component:** Answer road sign questions to test your knowledge.
 - **Username Storage:** Store player username using `PouchDB` for personalized gameplay.
 
