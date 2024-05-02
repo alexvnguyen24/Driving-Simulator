@@ -55,6 +55,23 @@
   cursor: pointer; 
 }
 
+#username{
+  display: block; 
+  right: -18%;
+  bottom: -2%;
+  background-color: #fac678;
+  color: black;
+  position: relative;
+}
+
+#username:hover{
+  background-color: #e1c3eb;
+}
+
+::placeholder{
+  color: black;
+}
+
 /*Ricky's Coding Portion*/
 
 #title_heading {
