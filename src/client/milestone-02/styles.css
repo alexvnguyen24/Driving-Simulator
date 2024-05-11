@@ -224,6 +224,9 @@ body {
   }
 }
 
+.rotate{
+  animation: wheel 1s linear infinite;
+}
 
 .quiz-container {
   max-width: 500px;
@@ -279,4 +282,8 @@ img {
   padding: 10px; /* Padding around the text */
   border-radius: 5px; /* Rounded corners */
   z-index: 9999;
+}
+
+.paused-animation{
+  animation-play-state: paused !important;
 }

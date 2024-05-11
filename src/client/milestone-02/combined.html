@@ -1,66 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrated Project</title>
-  <!-- Important to link the css file in order to implement all the stylistic effects. -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- On the first step of the game, user has to input name in order to start the game -->
-  <h1 id="username_display"></h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integrated Project</title>
+    <!-- Important to link the css file in order to implement all the stylistic effects. -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- On the first step of the game, user has to input name in order to start the game -->
+    <h1 id="username_display"></h1>
 
-  <!-- The following div takes care of the animation of the car, and the background -->
-  <div class="hero">
-    <div class="highway"></div>
-    <div class="city"></div>
-    <div class="car">
-      <img src="car.png" alt="Car">
+    <!-- The following div takes care of the animation of the car, and the background -->
+    <div class="hero">
+      <div class="highway"></div>
+      <div class="city"></div>
+      <div class="car">
+        <img src="car.png" alt="Car" />
+      </div>
+
+      <div class="wheel">
+        <img src="wheel.png" class="back-wheel" />
+        <img src="wheel.png" class="front-wheel" />
+      </div>
     </div>
-    
-    <div class="wheel">
-      <img src="wheel.png" class="back-wheel">
-      <img src="wheel.png" class="front-wheel">
-    </div>
-  </div>
-  
+
     <!-- The following div sets up the basic guidelines for the quiz game -->
-  <div class="quiz-container" id="quiz-container" style="display: none;">
-    <!-- Each individual div inside holds a separate question -->
-    <div class="question" id="question1">
+    <div class="quiz-container" id="quiz-container" style="display: none">
+      <!-- Each individual div inside holds a separate question -->
+      <div class="question" id="question1">
         <p>What does the following sign represent?</p>
-        <img src="stopSign.jpg" alt="Question 1 Image">
+        <img src="stopSign.jpg" alt="Question 1 Image" />
         <div class="options">
-          <label><input type="radio" name="q1" value="a"> Stop</label>
-          <label><input type="radio" name="q1" value="b"> Slow Down</label>
-          <label><input type="radio" name="q1" value="c"> Yield</label>
-          <label><input type="radio" name="q1" value="d"> Merge</label>
+          <label><input type="radio" name="q1" value="a" /> Stop</label>
+          <label><input type="radio" name="q1" value="b" /> Slow Down</label>
+          <label><input type="radio" name="q1" value="c" /> Yield</label>
+          <label><input type="radio" name="q1" value="d" /> Merge</label>
         </div>
       </div>
-      <div class="question" id="question2" style="display: none;">
-        <img src="noUTurnSign.jpg" alt="Question 2 Image">
+      <div class="question" id="question2" style="display: none">
+        <img src="noUTurnSign.jpg" alt="Question 2 Image" />
         <p>What does the following sign represent?</p>
         <div class="options">
-          <label><input type="radio" name="q2" value="a"> Yield</label>
-          <label><input type="radio" name="q2" value="b"> No U-Turn</label>
-          <label><input type="radio" name="q2" value="c"> Stop</label>
-          <label><input type="radio" name="q2" value="d"> U-Turn</label>
+          <label><input type="radio" name="q2" value="a" /> Yield</label>
+          <label><input type="radio" name="q2" value="b" /> No U-Turn</label>
+          <label><input type="radio" name="q2" value="c" /> Stop</label>
+          <label><input type="radio" name="q2" value="d" /> U-Turn</label>
         </div>
       </div>
       <!-- This div helps keep track of the user score. -->
-      <div id="score" style="display: none;">
+      <div id="score" style="display: none">
         <h1>Your Quiz Score</h1>
         <div id="score-result"></div>
       </div>
       <!-- This div takes care of timer on each question, and the next button under 
       each question. -->
-      <div id="timer">Time remaining: <span id="time-left">15</span> seconds</div>
+      <div id="timer">
+        Time remaining: <span id="time-left">15</span> seconds
+      </div>
       <button id="next-btn" onclick="nextQuestion()">Next</button>
-  </div>
+    </div>
 
-  <!-- This script is necessary in order to link the back-end code for the game, with
+    <!-- This script is necessary in order to link the back-end code for the game, with
   the front end set up of the game.  -->
-  <script src="combined.js"></script>
-</body>
+    <script src="combined.js"></script>
+  </body>
 </html>

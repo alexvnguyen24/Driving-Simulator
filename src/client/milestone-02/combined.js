@@ -1,6 +1,7 @@
 let theUsername = "";
 
- const playButtonElement = document.getElementById("play_button");
+const ani = document.querySelectorAll(".highway, .city, .wheel img");
+const playButtonElement = document.getElementById("play_button");
 if(playButtonElement) {
 
   playButtonElement.addEventListener('click', async function() {
@@ -91,6 +92,11 @@ function displayQuizQuestion() {
   const quizContainer = document.getElementById('quiz-container');
   quizContainer.style.display = 'block'; 
 
+  //Pauses the animation when the question box shows up
+  ani.forEach(e => {
+    e.classList.add('paused-animation');
+  });
+
   startTimer(); // Start the timer for the current question
 }
 
@@ -143,7 +149,14 @@ function nextQuestion() {
       document.getElementById('score-result').innerText = `Your score is: ${score}/2`;
   
       document.getElementById('next-btn').style.display = 'none';
-  
+      
+      //Only let the car move if the player answers all the questions right
+      //Make sure to change the '2' to however many questions there are
+      if(score === 2){
+        ani.forEach(e => {
+          e.classList.remove('paused-animation');
+        });
+      }
       return;
     }
 
@@ -170,4 +183,3 @@ window.addEventListener('load', () => {
   startCityAnimation();
   startQuizTimer();
 });
-
