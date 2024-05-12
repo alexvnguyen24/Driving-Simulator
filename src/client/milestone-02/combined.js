@@ -114,7 +114,7 @@ function displayQuizQuestion() {
       <img src="${question.image}" alt="Question ${currentQuestion} Image" />
       <div class="options">
         ${question.options.map((option, index) => `
-          <label><input type="radio" name="q${currentQuestion}" value="${option}" /> ${option}</label>
+          <label><input type="radio" name="q${currentQuestion}" value="${option}" /> ${option}</label> <br>
         `).join('')}
       </div>
     `;

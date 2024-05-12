@@ -20,5 +20,93 @@
       "Stop"
     ],
     "correctAnswer": "No U-Turn"
+  },
+  {
+    "question": "A steady green ligth at intersections means",
+    "image": "greenLight.jpg" ,
+    "options": [
+      "You may not turn right",
+      "You may drive through if the road is clear",
+      "You must stop and check for oncoming traffic before proceeding ",
+      "You must increase your speed"
+    ],
+    "correctAnswer": "You may drive through if the road is clear"
+  },
+  {
+    "question": "Before turning you should",
+    "image": "wheelTurning.jpg" ,
+    "options": [
+      "Use your signal",
+      "Turn the wheel",
+      "Increase your speed",
+      "Change your lane"
+    ],
+    "correctAnswer": "Use your signal"
+  },
+  {
+    "question": "What do flashing red ligths on a school bus indicate?",
+    "image": "busLight.jpg" ,
+    "options": [
+      "Go fast before the kids get off",
+      "The bus is about to stop",
+      "The bus is stopped to load or discahrge passengers",
+      "Traffic coming on either side can proceed"
+    ],
+    "correctAnswer": "The bus is stopped to load or discahrge passengers"
+  },
+  {
+    "question": "A _______ indicates the outer edge of the traffic lane, and it may be crossed only  by traffic moving to or from the shoulder",
+    "image": "solidLine.jpg" ,
+    "options": [
+      "solid yellow line",
+      "broken yellow line",
+      "solid white line",
+      "broken white line"
+    ],
+    "correctAnswer": "solid white line"
+  },
+  {
+    "question": "When driving at night with no other vehicles ahead, a driver should use:",
+    "image": "carHeadlights.jpg" ,
+    "options": [
+      "Emergency flashers",
+      "Low beam lights",
+      "Parking lights",
+      "High beam lights"
+    ],
+    "correctAnswer": "High beam lights"
+  },
+  {
+    "question": "If you are continually being passed on the right, you should",
+    "image": "carPassed.jpg" ,
+    "options": [
+      "Pull over to the right, and stop until the road is clear",
+      "Move to the right lane and allow other vehicles to pass you on the left",
+      "Increase your speed immediately",
+      "Hit the breaks and stop immediately. Then turn off your engine"
+    ],
+    "correctAnswer": "Move to the right lane and allow other vehicles to pass you on the left"
+  },
+  {
+    "question": "If you are judged a habitual offender, your license will be suspended for?",
+    "image": "license.jpg" ,
+    "options": [
+      "2 years",
+      "3 years",
+      "4 years",
+      "1 year"
+    ],
+    "correctAnswer": "4 years"
+  },
+  {
+    "question": "A flashing red light at a railroad crossing means",
+    "image": "flashingRed.jpg" ,
+    "options": [
+      "Stop. Do not proceed until the signals are compelted",
+      "Slow down and proceed if clear",
+      "Proceed with caution",
+      "You have the right of way"
+    ],
+    "correctAnswer": "Stop. Do not proceed until the signals are compelted"
   }
 ]
