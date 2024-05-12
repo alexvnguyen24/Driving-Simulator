@@ -169,7 +169,6 @@ function showScore() {
   }
 }
 
-
 window.addEventListener('load', () => {
   displayUsername(theUsername);
   startCarAnimation();
