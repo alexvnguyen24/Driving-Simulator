@@ -31,12 +31,12 @@ const city = document.querySelector('.city');
 let carAnimationId;
 let highwayAnimationId;
 let cityAnimationId;
-let quizTimer;
 let currentQuestion = 1;
 let timer;
-let timeLeft = 15;
+let timeLeft;
 let score = 0;
 let quizQuestions = [];
+const originalTimerCount = 5; // Store the original timer count
 
 function startCarAnimation() {
   carAnimationId = requestAnimationFrame(startCarAnimation);
@@ -50,9 +50,12 @@ function startCityAnimation() {
   cityAnimationId = requestAnimationFrame(startCityAnimation);
 }
 
-async function startQuizTimer() {
-  quizTimer = setInterval(displayQuizQuestion, 10000);
+async function startQuiz() {
   await fetchQuizQuestions();
+  setTimeout(() => {
+    displayQuizQuestion();
+    startTimer();
+  }, 5000);
 }
 
 async function fetchQuizQuestions() {
@@ -66,8 +69,6 @@ async function fetchQuizQuestions() {
     console.error('Error fetching quiz questions:', error);
   }
 }
-
-
 
 function nextQuestion() {
   const container = document.getElementById('quiz-container');
@@ -88,23 +89,42 @@ function nextQuestion() {
 
   if (currentQuestion <= quizQuestions.length) {
     displayQuizQuestion();
+    startTimer(); // Restart the timer for the next question
   } else {
     showScore();
   }
 }
 
+function startTimer() {
+  clearInterval(timer); // Clear any previous timer
+  timeLeft = originalTimerCount; // Reset the timer to its original count
+
+  function updateTimer() {
+    document.getElementById('time-left').innerText = timeLeft;
+    timeLeft--;
+
+    if (timeLeft < 0) {
+      clearInterval(timer);
+      nextQuestion();
+    }
+  }
+
+  updateTimer();
+  timer = setInterval(updateTimer, 1000);
+}
+
 function displayQuizQuestion() {
-  const quizContainer = document.getElementById('quiz-container');
-  quizContainer.style.display = 'block';
-
-  ani.forEach(e => {
-    e.classList.add('paused-animation');
-  });
-
-  const questionsContainer = document.getElementById('questions-container');
-  questionsContainer.innerHTML = '';
-  
   if (currentQuestion <= quizQuestions.length) {
+    const quizContainer = document.getElementById('quiz-container');
+    quizContainer.style.display = 'block';
+
+    ani.forEach(e => {
+      e.classList.add('paused-animation');
+    });
+
+    const questionsContainer = document.getElementById('questions-container');
+    questionsContainer.innerHTML = '';
+
     const question = quizQuestions[currentQuestion - 1];
     const questionElement = document.createElement('div');
     questionElement.classList.add('question');
@@ -119,54 +139,38 @@ function displayQuizQuestion() {
       </div>
     `;
     questionsContainer.appendChild(questionElement);
-
-    startTimer();
-  } else {
-    showScore();
   }
 }
 
-function startTimer() {
-  function updateTimer() {
-    document.getElementById('time-left').innerText = timeLeft;
-    timeLeft--;
-
-    if (timeLeft < 0 || currentQuestion > quizQuestions.length) {
-      clearInterval(timer);
-      timeLeft = 0;
-      showScore();
-    }
-  }
-
-  updateTimer();
-  timer = setInterval(updateTimer, 1000);
-}
 function showScore() {
-  // Stop the timer
   clearInterval(timer);
 
-  // Hide the quiz container
   const quizContainer = document.getElementById('quiz-container');
   quizContainer.style.display = 'none';
 
-  // Show the score container
-  const scoreContainer = document.getElementById('score');
-  scoreContainer.style.display = 'block';
+  const scoreWindow = window.open('', 'Score', 'width=400,height=200');
+  scoreWindow.document.write(`
+    <html>
+      <head>
+        <title>Quiz Result</title>
+      </head>
+      <body>
+        <h2>Quiz Result</h2>
+        <p>Your score is: ${score}/${quizQuestions.length}</p>
+        <button onclick="closeScoreWindow()">Close</button>
+      </body>
+    </html>
+  `);
 
-  // Display the score
-  const scoreResult = document.getElementById('score-result');
-  scoreResult.textContent = `Your score is: ${score}/${quizQuestions.length}`;
+  // Resume the animation
+  ani.forEach(e => {
+    e.classList.remove('paused-animation');
+  });
 
-  // Hide the next button
-  const nextButton = document.getElementById('next-btn');
-  nextButton.style.display = 'none';
-
-  // Resume animations if all questions are answered correctly
-  if (score === quizQuestions.length) {
-    ani.forEach(e => {
-      e.classList.remove('paused-animation');
-    });
-  }
+  // Close the score window and resume the animation when the close button is clicked
+  scoreWindow.closeScoreWindow = function() {
+    scoreWindow.close();
+  };
 }
 
 window.addEventListener('load', () => {
@@ -174,5 +178,5 @@ window.addEventListener('load', () => {
   startCarAnimation();
   startHighwayAnimation();
   startCityAnimation();
-  startQuizTimer();
+  startQuiz();
 });
