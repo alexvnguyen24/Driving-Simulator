@@ -33,7 +33,7 @@ let highwayAnimationId;
 let cityAnimationId;
 let currentQuestion = 1;
 let timer;
-let timeLeft;
+let timeLeft = 30;
 let score = 0;
 let quizQuestions = [];
 const originalTimerCount = 5; // Store the original timer count
@@ -71,6 +71,9 @@ async function fetchQuizQuestions() {
 }
 
 function nextQuestion() {
+  clearInterval(timer);
+  timeLeft = 30;
+
   const container = document.getElementById('quiz-container');
   const currentQuestionElement = document.getElementById(`question${currentQuestion}`);
 
@@ -142,36 +145,52 @@ function displayQuizQuestion() {
   }
 }
 
+function startTimer() {
+  clearInterval(timer);
+  function updateTimer() {
+    document.getElementById('time-left').innerText = timeLeft;
+    timeLeft--;
+
+    if (timeLeft < 0 || currentQuestion > quizQuestions.length) {
+      clearInterval(timer);
+      timeLeft = 0;
+      showScore();
+    }
+  }
+
+  updateTimer();
+  timer = setInterval(updateTimer, 1000);
+}
 function showScore() {
   clearInterval(timer);
 
-  const quizContainer = document.getElementById('quiz-container');
-  quizContainer.style.display = 'none';
+  // Remove this section if you want to display the question and timer if the player hasn't finished answering the question
+  // Clear the questions container
+  const questionsContainer = document.getElementById('questions-container');
+  questionsContainer.innerHTML = '';
 
-  const scoreWindow = window.open('', 'Score', 'width=400,height=200');
-  scoreWindow.document.write(`
-    <html>
-      <head>
-        <title>Quiz Result</title>
-      </head>
-      <body>
-        <h2>Quiz Result</h2>
-        <p>Your score is: ${score}/${quizQuestions.length}</p>
-        <button onclick="closeScoreWindow()">Close</button>
-      </body>
-    </html>
-  `);
+  // Show the score container
+  const scoreContainer = document.getElementById('score');
+  scoreContainer.style.display = 'block';
 
-  // Resume the animation
-  ani.forEach(e => {
-    e.classList.remove('paused-animation');
-  });
+  // Display the score
+  const scoreResult = document.getElementById('score-result');
+  scoreResult.textContent = `Your score is: ${score}/${quizQuestions.length}`;
 
-  // Close the score window and resume the animation when the close button is clicked
-  scoreWindow.closeScoreWindow = function() {
-    scoreWindow.close();
-  };
+  // Hide the next button
+  const nextButton = document.getElementById('next-btn');
+  nextButton.style.display = 'none';
+
+  // Resume animations if 70% of the questions are answered correctly
+  if (score >= quizQuestions.length*.7) {
+    ani.forEach(e => {
+      e.classList.remove('paused-animation');
+    });
+  }
 }
+
+const audioPlayer = document.getElementById("audioPlayer");
+audioPlayer.play();
 
 window.addEventListener('load', () => {
   displayUsername(theUsername);
