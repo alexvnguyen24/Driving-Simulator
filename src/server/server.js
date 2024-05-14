@@ -79,6 +79,7 @@ app.put('/api/questions/:id', async (req, res) => {
   }
 });
 
+//added this
 // Handle DELETE request to delete a quiz question by ID
 app.delete('/api/questions/:id', async (req, res) => {
   try {
