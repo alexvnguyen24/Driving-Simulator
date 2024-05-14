@@ -271,7 +271,7 @@ img {
   margin-top: 10px;
 }
 
-#username_display {
+#username_display, #button {
   position: fixed;
   top: 20px;
   left: 20px;

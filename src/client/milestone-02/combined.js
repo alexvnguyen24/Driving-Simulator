@@ -34,7 +34,7 @@ let cityAnimationId;
 let quizTimer;
 let currentQuestion = 1;
 let timer;
-let timeLeft = 15;
+let timeLeft = 30;
 let score = 0;
 let quizQuestions = [];
 
@@ -70,6 +70,9 @@ async function fetchQuizQuestions() {
 
 
 function nextQuestion() {
+  clearInterval(timer);
+  timeLeft = 30;
+
   const container = document.getElementById('quiz-container');
   const currentQuestionElement = document.getElementById(`question${currentQuestion}`);
 
@@ -127,6 +130,7 @@ function displayQuizQuestion() {
 }
 
 function startTimer() {
+  clearInterval(timer);
   function updateTimer() {
     document.getElementById('time-left').innerText = timeLeft;
     timeLeft--;
@@ -145,9 +149,10 @@ function showScore() {
   // Stop the timer
   clearInterval(timer);
 
-  // Hide the quiz container
-  const quizContainer = document.getElementById('quiz-container');
-  quizContainer.style.display = 'none';
+  // Remove this section if you want to display the question and timer if the player hasn't finished answering the question
+  // Clear the questions container
+  const questionsContainer = document.getElementById('questions-container');
+  questionsContainer.innerHTML = '';
 
   // Show the score container
   const scoreContainer = document.getElementById('score');
@@ -155,19 +160,22 @@ function showScore() {
 
   // Display the score
   const scoreResult = document.getElementById('score-result');
-  scoreResult.textContent = `Your score is: ${score}/${quizQuestions.length}`;
+  scoreResult.innerHTML = `Your score is: ${score}/${quizQuestions.length}`;
 
   // Hide the next button
   const nextButton = document.getElementById('next-btn');
   nextButton.style.display = 'none';
 
-  // Resume animations if all questions are answered correctly
-  if (score === quizQuestions.length) {
+  // Resume animations if 70% of the questions are answered correctly
+  if (score >= quizQuestions.length*.7) {
     ani.forEach(e => {
       e.classList.remove('paused-animation');
     });
   }
 }
+
+const audioPlayer = document.getElementById("audioPlayer");
+audioPlayer.play();
 
 window.addEventListener('load', () => {
   displayUsername(theUsername);
