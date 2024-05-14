@@ -67,8 +67,6 @@ async function fetchQuizQuestions() {
   }
 }
 
-
-
 function nextQuestion() {
   clearInterval(timer);
   timeLeft = 30;
