@@ -64,7 +64,7 @@ async function startQuiz() {
  setTimeout(() => {
    displayQuizQuestion();
    startTimer();
- }, 5000);
+ }, 2500);
 }
 
 
