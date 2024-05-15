@@ -201,7 +201,8 @@ function showScore() {
   }
  }
  
- 
+const audioPlayer = document.getElementById("audioPlayer");
+audioPlayer.volume = 0.1;
 
 
 window.addEventListener('load', () => {
