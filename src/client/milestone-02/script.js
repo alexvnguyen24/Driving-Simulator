@@ -25,7 +25,7 @@ tutorialButton.addEventListener("click", function(){
 
         h1.innerHTML = "How To Play";
         p.innerHTML = "Welcome! This game is designed to help you learn more about the rules of the road.";
-        p1.innerHTML = "To get started, press the 'PLAY!' button. Once you are in the game, a series of questions will pop up. Answer these questions within the given time limit to test your mastery of the road. At the end of the level, you will see how well you did.";
+        p1.innerHTML = "To get started, press the 'PLAY!' button. Once you are in the game, a series of questions will pop up. Answer these questions within the given time limit to test your mastery of the road. At the end of the level, you will see how well you did. Aim to get 70% of the questions right to pass the test.";
         p2.innerHTML = "To close this menu, reclick the 'How to play' button.";
         textBox.setAttribute("id", "tutorial-box");
         p.setAttribute("class", "instruction-paragraph");
