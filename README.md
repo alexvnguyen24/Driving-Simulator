@@ -1,4 +1,3 @@
-add here
 ---
 
 # Driving Simulator Game
@@ -7,9 +6,8 @@ This is a simple driving simulator game developed using HTML, CSS, and JavaScrip
 
 ## Game Features
 
-- **Car Animation:** The car runs on the highway and will stop for the quiz to pop up.
-- **Quiz Component:** Answer road sign questions to test your knowledge.
-- **Username Storage:** Store player username using `PouchDB` for personalized gameplay.
+Milestone 03 
+- We used the API routes and pouchDB in order to retreive the questions from the database which we have created in our game. There are 10 questions and answers being asked to the user, and once they answers all of the questions, their score is displayed at the end of the quiz. We have various functions keeping track of the timer, the next button to navigate ahead in the quiz, the update and reset timer, a displayQuestion function which accesses the questions database and goes through each question displaying it on the screen. Also at the beginning of the game, the user is requested to enter an username, which if it is not provided, an alert pops up. Once the username is inputed, the game begins and a sound plays in the background while the game is running. We used express.js to connect to the server and use the port to connect the frontend to the server. The game ends when the user reaches the end of all questions. 
 
 ## Getting Started
 
@@ -38,10 +36,10 @@ To play the game locally on your machine, follow these steps:
 
 ## Contributors
 
-John Doe - @johndoe
-Jane Smith - @janesmith
-Alex Johnson - @alexjohnson
-Sarah Thompson - @sarahthompson
+Aryamani Boruah - @aboruah@umass.edu
+Shruti Oak - @saoak@umass.edu
+Ricky Lam - @prlam@umass.edu
+Alex Nguyen - @alevnguyen@umass.edu
 
 ## License
 
